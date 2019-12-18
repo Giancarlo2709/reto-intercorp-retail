@@ -11,6 +11,9 @@ import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -24,6 +27,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Entity
 @ApiModel(description = "Informacion del cliente")
+@JsonInclude(value = Include.NON_NULL)
 public class Cliente {
 
 	@Id
@@ -45,6 +49,7 @@ public class Cliente {
 	@Past
 	@ApiModelProperty(notes="Fecha de nacimiento debe ser menor a la fecha actual")
 	@Column(name="fecha_nacimiento")
+	@NotNull
 	private LocalDate fechaNacimiento;
 	
 	@Transient

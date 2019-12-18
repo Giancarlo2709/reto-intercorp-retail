@@ -3,4 +3,4 @@ spring:
     name: service-client
   h2:    console:      enabled: true
 
-server:  port: 8092
+server:  port: 8095

@@ -14,5 +14,11 @@ public class DateUtil {
 		Period periodo = Period.between(fechaNacimiento, ahora);
 		return periodo.getYears();
 	}
+	
+	public static LocalDate calcularFechaDeceso(Integer edad, double esperanzaVida) {
+		Double aniosFaltante = esperanzaVida - edad;
+		LocalDate fechaActual = LocalDate.now();
+		return fechaActual.plusYears(aniosFaltante.longValue());		
+	}
 
 }

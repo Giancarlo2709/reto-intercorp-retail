@@ -1,5 +1,7 @@
 package pe.intercorpretail.service.client.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +23,12 @@ public class ClienteServiceImpl implements ClienteService {
 	@Override
 	public Cliente crearCliente(Cliente cliente) {
 		cliente.setEdad(DateUtil.calcularEdad(cliente.getFechaNacimiento()));
-		return clienteRepository.save(cliente);
+		return this.clienteRepository.save(cliente);
+	}
+
+	@Override
+	public List<Cliente> listarClientes() {
+		return this.clienteRepository.findAll();
 	}
 
 }
