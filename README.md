@@ -49,3 +49,6 @@ Response:
     "fechaProbableFallecimiento": "2072-12-18"
   }
 ]
+
+### Cálculo de la fecha de deceso
+Se calculó mediante la esperanza de vida en el Perú (74.6 años)
